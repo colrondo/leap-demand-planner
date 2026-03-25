@@ -151,6 +151,38 @@ export default function DashboardPage() {
       ? entries
       : entries.filter((e) => e.business_unit === activeTab)
 
+  // ── Export to CSV ─────────────────────────────────────────────────────────────
+
+  function exportToCSV() {
+    const headers = [
+      'Requestor', 'Business Unit', 'Need Type', 'Modality', 'Audience Size',
+      'Complexity', 'LEAP Eligible', 'Delivery Date', 'Quarter', 'Est. Units',
+      'Status', 'Agent Notes'
+    ]
+    const rows = visibleEntries.map((e) => [
+      e.requestor_name,
+      e.business_unit,
+      e.need_type,
+      e.modality,
+      e.audience_size,
+      e.complexity,
+      e.leap_eligible ? 'Yes' : 'No',
+      e.desired_delivery_date,
+      e.quarter_target ?? '',
+      e.estimated_effort_hours ?? '',
+      e.status,
+      `"${(e.agent_notes ?? '').replace(/"/g, '""')}"`,
+    ])
+    const csv = [headers.join(','), ...rows.map((r) => r.join(','))].join('\n')
+    const blob = new Blob([csv], { type: 'text/csv' })
+    const url = URL.createObjectURL(blob)
+    const a = document.createElement('a')
+    a.href = url
+    a.download = `leap-requests-${activeTab.replace(/\s+/g, '-').toLowerCase()}-${currentQ.replace(' ', '-')}.csv`
+    a.click()
+    URL.revokeObjectURL(url)
+  }
+
   // ── Toggle Note Expand ───────────────────────────────────────────────────────
 
   function toggleNote(id: string) {
@@ -297,9 +329,17 @@ export default function DashboardPage() {
             <h2 className="text-sm font-semibold text-gray-500 uppercase tracking-widest">
               {activeTab === 'Holistic View' ? 'All Active Requests' : `${activeTab} Requests`}
             </h2>
+            <div className="flex items-center gap-3">
+              <button
+                onClick={exportToCSV}
+                className="text-sm font-medium text-[#CC0066] border border-[#CC0066] rounded-full px-4 py-1.5 hover:bg-[#CC0066] hover:text-white transition-all duration-200"
+              >
+                ↓ Export to Excel
+              </button>
             <span className="text-xs text-gray-400 bg-gray-100 rounded-full px-3 py-1">
               {loading ? '—' : `${visibleEntries.length} requests`}
             </span>
+            </div>
           </div>
 
           {/* Empty State */}
