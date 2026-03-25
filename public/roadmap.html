@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LEAP Demand Planning — Progress & Roadmap</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #f5f5f7;
+      color: #1A1A2E;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 40px 24px;
+    }
+
+    .slide {
+      background: white;
+      border-radius: 24px;
+      max-width: 1000px;
+      width: 100%;
+      overflow: hidden;
+      box-shadow: 0 24px 80px rgba(0,0,0,0.10);
+    }
+
+    /* Header */
+    .header {
+      background: #1A1A2E;
+      padding: 36px 48px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .header img {
+      height: 44px;
+      width: auto;
+      filter: brightness(0) invert(1);
+      opacity: 0.95;
+    }
+
+    .header-right {
+      text-align: right;
+    }
+
+    .header-title {
+      color: white;
+      font-size: 20px;
+      font-weight: 700;
+      letter-spacing: -0.3px;
+    }
+
+    .header-sub {
+      color: rgba(255,255,255,0.5);
+      font-size: 13px;
+      margin-top: 4px;
+    }
+
+    /* Body */
+    .body {
+      padding: 48px 48px 40px;
+    }
+
+    .section-label {
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: #8B1FA8;
+      margin-bottom: 20px;
+    }
+
+    /* Today grid */
+    .today-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      margin-bottom: 40px;
+    }
+
+    .today-card {
+      background: #f5f5f7;
+      border-radius: 16px;
+      padding: 20px;
+    }
+
+    .today-card .check {
+      width: 28px;
+      height: 28px;
+      background: #8B1FA8;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 12px;
+    }
+
+    .today-card .check svg {
+      width: 14px;
+      height: 14px;
+      stroke: white;
+      stroke-width: 2.5;
+      fill: none;
+    }
+
+    .today-card h3 {
+      font-size: 14px;
+      font-weight: 700;
+      color: #1A1A2E;
+      margin-bottom: 6px;
+    }
+
+    .today-card p {
+      font-size: 12px;
+      color: #6e6e73;
+      line-height: 1.6;
+    }
+
+    /* Divider */
+    .divider {
+      border: none;
+      border-top: 1px solid #e5e5ea;
+      margin-bottom: 36px;
+    }
+
+    /* Roadmap */
+    .roadmap {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      margin-bottom: 40px;
+    }
+
+    .phase-card {
+      border-radius: 16px;
+      padding: 20px;
+      border: 1.5px solid #e5e5ea;
+    }
+
+    .phase-badge {
+      display: inline-block;
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      padding: 3px 10px;
+      border-radius: 100px;
+      margin-bottom: 12px;
+    }
+
+    .phase-2 .phase-badge { background: #8B1FA8; color: white; }
+    .phase-3 .phase-badge { background: #8B1FA820; color: #8B1FA8; }
+    .phase-4 .phase-badge { background: #1A1A2E10; color: #1A1A2E; }
+
+    .phase-card h3 {
+      font-size: 14px;
+      font-weight: 700;
+      color: #1A1A2E;
+      margin-bottom: 10px;
+    }
+
+    .phase-card ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .phase-card ul li {
+      font-size: 12px;
+      color: #6e6e73;
+      line-height: 1.5;
+      padding-left: 14px;
+      position: relative;
+    }
+
+    .phase-card ul li::before {
+      content: '·';
+      position: absolute;
+      left: 0;
+      color: #8B1FA8;
+      font-weight: 700;
+    }
+
+    /* North Star */
+    .north-star {
+      background: linear-gradient(135deg, #8B1FA8 0%, #5a1070 100%);
+      border-radius: 16px;
+      padding: 24px 28px;
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .north-star-icon {
+      font-size: 28px;
+      flex-shrink: 0;
+    }
+
+    .north-star-label {
+      font-size: 10px;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.6);
+      margin-bottom: 6px;
+    }
+
+    .north-star p {
+      font-size: 14px;
+      color: white;
+      line-height: 1.6;
+      font-weight: 500;
+    }
+
+    /* Footer */
+    .footer {
+      padding: 16px 48px;
+      border-top: 1px solid #e5e5ea;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .footer span {
+      font-size: 11px;
+      color: #b0b0b8;
+    }
+
+    .footer .dot {
+      width: 6px;
+      height: 6px;
+      background: #8B1FA8;
+      border-radius: 50%;
+    }
+  </style>
+</head>
+<body>
+  <div class="slide">
+
+    <!-- Header -->
+    <div class="header">
+      <img src="/logo.png" alt="LEAP" />
+      <div class="header-right">
+        <div class="header-title">Demand Planning Tool</div>
+        <div class="header-sub">Progress & Roadmap · March 2026</div>
+      </div>
+    </div>
+
+    <!-- Body -->
+    <div class="body">
+
+      <!-- Where We Are -->
+      <div class="section-label">Where We Are Today</div>
+      <div class="today-grid">
+        <div class="today-card">
+          <div class="check">
+            <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+          </div>
+          <h3>Data Collection (Intake)</h3>
+          <p>Structured intake form live. BUs can submit learning requests in under 2 minutes, stored in a live database.</p>
+        </div>
+        <div class="today-card">
+          <div class="check">
+            <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+          </div>
+          <h3>AI-Powered Triage</h3>
+          <p>Claude AI agent instantly classifies LEAP eligibility, sizes effort, assigns a quarter, and writes planning notes — automatically.</p>
+        </div>
+        <div class="today-card">
+          <div class="check">
+            <svg viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
+          </div>
+          <h3>Real-Time Dashboard</h3>
+          <p>Holistic and BU-level pipeline views, demand vs. capacity charts, status tracking, and Excel export.</p>
+        </div>
+      </div>
+
+      <hr class="divider" />
+
+      <!-- Roadmap -->
+      <div class="section-label">What's Coming Next</div>
+      <div class="roadmap">
+        <div class="phase-card phase-2">
+          <div class="phase-badge">Phase 2 — Next</div>
+          <h3>Prioritization & Sizing</h3>
+          <ul>
+            <li>T-shirt sizing with confidence scoring</li>
+            <li>Priority scoring within and across BUs</li>
+            <li>Sponsor level & strategic impact weighting</li>
+            <li>Cost model tied to effort estimates</li>
+          </ul>
+        </div>
+        <div class="phase-card phase-3">
+          <div class="phase-badge">Phase 3</div>
+          <h3>Capacity & Sequencing</h3>
+          <ul>
+            <li>Admin page for capacity by quarter</li>
+            <li>Skills-based capacity matching</li>
+            <li>Flex vs. surge capacity tracking</li>
+            <li>Sequencing & scheduling view</li>
+          </ul>
+        </div>
+        <div class="phase-card phase-4">
+          <div class="phase-badge">Phase 4</div>
+          <h3>Full Portfolio Planning</h3>
+          <ul>
+            <li>Annual → quarterly → ad-hoc in one tool</li>
+            <li>End-to-end intake to delivery story</li>
+            <li>Leadership portfolio view</li>
+            <li>Full replacement of manual tracking</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- North Star -->
+      <div class="north-star">
+        <div class="north-star-icon">🎯</div>
+        <div>
+          <div class="north-star-label">North Star</div>
+          <p>A single system that captures demand, prioritizes intelligently, matches LEAP capacity and skills, optimizes cost, and gives leadership a real-time view of the full learning portfolio — from annual planning through delivery.</p>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+      <span>LEAP · Learning Excellence & Advancement Partner</span>
+      <div class="dot"></div>
+      <span>Powered by Accenture</span>
+    </div>
+
+  </div>
+</body>
+</html>
