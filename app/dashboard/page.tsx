@@ -203,7 +203,7 @@ export default function DashboardPage() {
           href="/"
           className="text-sm font-semibold text-[#1A1A2E] hover:text-[#CC0066] transition-colors duration-200 flex items-center gap-1"
         >
-          ← LEAP
+          ← <img src="/logo.png" alt="LEAP" className="h-6 w-auto inline-block ml-1" />
         </Link>
         <span className="text-sm text-gray-500 font-medium">Dashboard</span>
         <Link

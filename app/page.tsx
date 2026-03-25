@@ -5,7 +5,7 @@ export default function HomePage() {
     <div className="min-h-screen bg-white font-sans flex flex-col">
       {/* Sticky Nav */}
       <header className="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-gray-100 px-6 py-4 flex items-center justify-between">
-        <span className="text-xl font-bold tracking-tight text-[#1A1A2E]">LEAP</span>
+        <img src="/logo.png" alt="LEAP" className="h-8 w-auto" />
         <button className="border border-gray-300 text-gray-700 rounded-full px-5 py-2 text-sm font-semibold hover:bg-gray-50 transition-all duration-200">
           Sign In
         </button>
