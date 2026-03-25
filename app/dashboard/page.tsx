@@ -201,14 +201,14 @@ export default function DashboardPage() {
       <header className="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-gray-100 px-6 py-3 flex items-center justify-between">
         <Link
           href="/"
-          className="text-sm font-semibold text-[#1A1A2E] hover:text-[#CC0066] transition-colors duration-200 flex items-center gap-1"
+          className="text-sm font-semibold text-[#1A1A2E] hover:text-[#8B1FA8] transition-colors duration-200 flex items-center gap-1"
         >
           ← <img src="/logo.png" alt="LEAP" className="h-6 w-auto inline-block ml-1" />
         </Link>
         <span className="text-sm text-gray-500 font-medium">Dashboard</span>
         <Link
           href="/new-entry"
-          className="bg-[#CC0066] text-white rounded-full px-5 py-2 text-sm font-semibold hover:bg-[#aa0055] transition-all duration-200"
+          className="bg-[#8B1FA8] text-white rounded-full px-5 py-2 text-sm font-semibold hover:bg-[#6a177f] transition-all duration-200"
         >
           ＋ New Request
         </Link>
@@ -276,7 +276,7 @@ export default function DashboardPage() {
                 onClick={() => setActiveTab(tab)}
                 className={`px-4 py-1.5 text-sm transition-all duration-200 rounded-full ${
                   activeTab === tab
-                    ? 'bg-white shadow-sm text-[#CC0066] font-semibold'
+                    ? 'bg-white shadow-sm text-[#8B1FA8] font-semibold'
                     : 'text-gray-500 hover:text-gray-700'
                 }`}
               >
@@ -317,7 +317,7 @@ export default function DashboardPage() {
                 }}
               />
               <Legend wrapperStyle={{ fontSize: '12px', paddingTop: '16px' }} />
-              <Bar dataKey="demand" name="Demand (units)" fill="#CC0066" radius={[6, 6, 0, 0]} />
+              <Bar dataKey="demand" name="Demand (units)" fill="#8B1FA8" radius={[6, 6, 0, 0]} />
               <Bar dataKey="capacity" name="Capacity (units)" fill="#1A1A2E" radius={[6, 6, 0, 0]} />
             </BarChart>
           </ResponsiveContainer>
@@ -332,7 +332,7 @@ export default function DashboardPage() {
             <div className="flex items-center gap-3">
               <button
                 onClick={exportToCSV}
-                className="text-sm font-medium text-[#CC0066] border border-[#CC0066] rounded-full px-4 py-1.5 hover:bg-[#CC0066] hover:text-white transition-all duration-200"
+                className="text-sm font-medium text-[#8B1FA8] border border-[#8B1FA8] rounded-full px-4 py-1.5 hover:bg-[#8B1FA8] hover:text-white transition-all duration-200"
               >
                 ↓ Export to Excel
               </button>
@@ -350,7 +350,7 @@ export default function DashboardPage() {
               <p className="text-sm text-gray-400">Submit a new request to get started.</p>
               <Link
                 href="/new-entry"
-                className="mt-2 bg-[#CC0066] text-white rounded-full px-6 py-2.5 text-sm font-semibold hover:bg-[#aa0055] transition-all duration-200"
+                className="mt-2 bg-[#8B1FA8] text-white rounded-full px-6 py-2.5 text-sm font-semibold hover:bg-[#6a177f] transition-all duration-200"
               >
                 ＋ New Request
               </Link>
@@ -415,7 +415,7 @@ export default function DashboardPage() {
                         </td>
                         <td className="px-4 py-3">
                           {entry.leap_eligible ? (
-                            <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-semibold bg-[#CC0066]/10 text-[#CC0066]">
+                            <span className="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-semibold bg-[#8B1FA8]/10 text-[#8B1FA8]">
                               LEAP
                             </span>
                           ) : (
@@ -457,7 +457,7 @@ export default function DashboardPage() {
                               {entry.agent_notes.length > 60 && (
                                 <button
                                   onClick={() => toggleNote(entry.id)}
-                                  className="ml-1 text-[#CC0066] text-xs font-medium hover:underline focus:outline-none"
+                                  className="ml-1 text-[#8B1FA8] text-xs font-medium hover:underline focus:outline-none"
                                 >
                                   {isExpanded ? 'less' : 'more'}
                                 </button>

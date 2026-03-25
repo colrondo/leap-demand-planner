@@ -134,7 +134,7 @@ export default function NewEntryPage() {
       <header className="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-gray-100 px-6 py-4 flex items-center justify-between">
         <Link
           href="/"
-          className="text-sm font-semibold text-[#1A1A2E] hover:text-[#CC0066] transition-colors duration-200 flex items-center gap-1"
+          className="text-sm font-semibold text-[#1A1A2E] hover:text-[#8B1FA8] transition-colors duration-200 flex items-center gap-1"
         >
           ← <img src="/logo.png" alt="LEAP" className="h-6 w-auto inline-block ml-1" />
         </Link>
@@ -203,7 +203,7 @@ export default function NewEntryPage() {
             <div className="flex flex-col sm:flex-row gap-3">
               <button
                 onClick={handleReset}
-                className="flex-1 bg-[#CC0066] hover:bg-[#a3004f] text-white text-sm font-medium py-2.5 px-4 rounded-full transition-all duration-200"
+                className="flex-1 bg-[#8B1FA8] hover:bg-[#6a177f] text-white text-sm font-medium py-2.5 px-4 rounded-full transition-all duration-200"
               >
                 Submit another request
               </button>
@@ -222,7 +222,7 @@ export default function NewEntryPage() {
           <div className="bg-white rounded-2xl shadow-sm p-8 mb-8 text-center">
             <div className="flex justify-center mb-4">
               <svg
-                className="animate-spin h-8 w-8 text-[#CC0066]"
+                className="animate-spin h-8 w-8 text-[#8B1FA8]"
                 xmlns="http://www.w3.org/2000/svg"
                 fill="none"
                 viewBox="0 0 24 24"
@@ -274,7 +274,7 @@ export default function NewEntryPage() {
                 value={form.requestor_name}
                 onChange={handleChange}
                 placeholder="Jane Smith"
-                className="w-full border border-gray-300 rounded-xl px-3 py-2 text-sm text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#CC0066] focus:border-transparent"
+                className="w-full border border-gray-300 rounded-xl px-3 py-2 text-sm text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#8B1FA8] focus:border-transparent"
               />
             </div>
 
@@ -290,7 +290,7 @@ export default function NewEntryPage() {
                 value={form.requestor_email}
                 onChange={handleChange}
                 placeholder="jane.smith@bms.com"
-                className="w-full border border-gray-300 rounded-xl px-3 py-2 text-sm text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#CC0066] focus:border-transparent"
+                className="w-full border border-gray-300 rounded-xl px-3 py-2 text-sm text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#8B1FA8] focus:border-transparent"
               />
             </div>
 
@@ -304,7 +304,7 @@ export default function NewEntryPage() {
                 required
                 value={form.business_unit}
                 onChange={handleChange}
-                className="w-full border border-gray-300 rounded-xl px-3 py-2 text-sm text-gray-900 focus:outline-none focus:ring-2 focus:ring-[#CC0066] focus:border-transparent bg-white"
+                className="w-full border border-gray-300 rounded-xl px-3 py-2 text-sm text-gray-900 focus:outline-none focus:ring-2 focus:ring-[#8B1FA8] focus:border-transparent bg-white"
               >
                 <option value="">Select a business unit</option>
                 {BUSINESS_UNITS.map((bu) => (
@@ -325,7 +325,7 @@ export default function NewEntryPage() {
                 required
                 value={form.type_of_need}
                 onChange={handleChange}
-                className="w-full border border-gray-300 rounded-xl px-3 py-2 text-sm text-gray-900 focus:outline-none focus:ring-2 focus:ring-[#CC0066] focus:border-transparent bg-white"
+                className="w-full border border-gray-300 rounded-xl px-3 py-2 text-sm text-gray-900 focus:outline-none focus:ring-2 focus:ring-[#8B1FA8] focus:border-transparent bg-white"
               >
                 <option value="">Select type of need</option>
                 {NEED_TYPES.map((nt) => (
@@ -348,7 +348,7 @@ export default function NewEntryPage() {
                 value={form.description}
                 onChange={handleChange}
                 placeholder="Describe the learning need, audience, and any relevant context…"
-                className="w-full border border-gray-300 rounded-xl px-3 py-2 text-sm text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#CC0066] focus:border-transparent resize-none"
+                className="w-full border border-gray-300 rounded-xl px-3 py-2 text-sm text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#8B1FA8] focus:border-transparent resize-none"
               />
             </div>
 
@@ -365,7 +365,7 @@ export default function NewEntryPage() {
                 value={form.learner_count}
                 onChange={handleChange}
                 placeholder="e.g. 250"
-                className="w-full border border-gray-300 rounded-xl px-3 py-2 text-sm text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#CC0066] focus:border-transparent"
+                className="w-full border border-gray-300 rounded-xl px-3 py-2 text-sm text-gray-900 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#8B1FA8] focus:border-transparent"
               />
             </div>
 
@@ -380,7 +380,7 @@ export default function NewEntryPage() {
                 required
                 value={form.desired_delivery_date}
                 onChange={handleChange}
-                className="w-full border border-gray-300 rounded-xl px-3 py-2 text-sm text-gray-900 focus:outline-none focus:ring-2 focus:ring-[#CC0066] focus:border-transparent"
+                className="w-full border border-gray-300 rounded-xl px-3 py-2 text-sm text-gray-900 focus:outline-none focus:ring-2 focus:ring-[#8B1FA8] focus:border-transparent"
               />
             </div>
 
@@ -392,7 +392,7 @@ export default function NewEntryPage() {
                 required
                 value={form.priority}
                 onChange={handleChange}
-                className="w-full border border-gray-300 rounded-xl px-3 py-2 text-sm text-gray-900 focus:outline-none focus:ring-2 focus:ring-[#CC0066] focus:border-transparent bg-white"
+                className="w-full border border-gray-300 rounded-xl px-3 py-2 text-sm text-gray-900 focus:outline-none focus:ring-2 focus:ring-[#8B1FA8] focus:border-transparent bg-white"
               >
                 <option value="">Select priority</option>
                 {PRIORITIES.map((p) => (
@@ -413,7 +413,7 @@ export default function NewEntryPage() {
                 required
                 value={form.delivery_modality}
                 onChange={handleChange}
-                className="w-full border border-gray-300 rounded-xl px-3 py-2 text-sm text-gray-900 focus:outline-none focus:ring-2 focus:ring-[#CC0066] focus:border-transparent bg-white"
+                className="w-full border border-gray-300 rounded-xl px-3 py-2 text-sm text-gray-900 focus:outline-none focus:ring-2 focus:ring-[#8B1FA8] focus:border-transparent bg-white"
               >
                 <option value="">Select modality</option>
                 {MODALITIES.map((m) => (
@@ -434,7 +434,7 @@ export default function NewEntryPage() {
                 required
                 value={form.complexity}
                 onChange={handleChange}
-                className="w-full border border-gray-300 rounded-xl px-3 py-2 text-sm text-gray-900 focus:outline-none focus:ring-2 focus:ring-[#CC0066] focus:border-transparent bg-white"
+                className="w-full border border-gray-300 rounded-xl px-3 py-2 text-sm text-gray-900 focus:outline-none focus:ring-2 focus:ring-[#8B1FA8] focus:border-transparent bg-white"
               >
                 <option value="">Select complexity</option>
                 {COMPLEXITIES.map((c) => (
@@ -466,7 +466,7 @@ export default function NewEntryPage() {
                       onClick={() => handleLeapToggle(opt.value)}
                       className={`px-5 py-2 text-sm font-medium transition-all duration-200 focus:outline-none ${
                         isSelected
-                          ? 'bg-[#CC0066] text-white'
+                          ? 'bg-[#8B1FA8] text-white'
                           : 'bg-white text-gray-600 hover:bg-gray-50'
                       } border-r border-gray-300 last:border-r-0`}
                     >
@@ -487,7 +487,7 @@ export default function NewEntryPage() {
               <button
                 type="submit"
                 disabled={loading}
-                className="w-full bg-[#CC0066] hover:bg-[#a3004f] disabled:opacity-60 disabled:cursor-not-allowed text-white font-semibold py-2.5 px-4 rounded-full transition-all duration-200 text-sm"
+                className="w-full bg-[#8B1FA8] hover:bg-[#6a177f] disabled:opacity-60 disabled:cursor-not-allowed text-white font-semibold py-2.5 px-4 rounded-full transition-all duration-200 text-sm"
               >
                 {loading ? 'Submitting…' : 'Submit Request'}
               </button>
